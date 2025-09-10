@@ -1,26 +1,23 @@
 .feedback-wrapper {
-  padding: 40px 20px;
-  height: 100vh;
-  overflow: hidden;
-  background: linear-gradient(145deg, #f0f4ff, #dbe7ff);
+  padding: 90px 20px 40px;
+  min-height: 100vh;
+  background: #f8fafc;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-family: 'Poppins', sans-serif;
+  align-items: flex-start;
+  font-family: 'Inter', 'Poppins', sans-serif;
 }
 
 .feedback-container {
-  background: #fff;
-  padding: 40px 35px;
+  background: #ffffff;
+  padding: 30px 28px;
   border-radius: 16px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
-  width: 400px;
-  max-height: 90vh;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  width: 420px;
+  max-height: 80vh;
   overflow-y: auto;
-  animation: fadeSlideIn 0.4s ease-out;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  margin-top: -170px;
 }
 
 .feedback-container::-webkit-scrollbar {
@@ -29,9 +26,10 @@
 
 .feedback-container h2 {
   text-align: center;
-  color: #333;
-  margin-bottom: 30px;
-  font-size: 24px;
+  color: #111827;
+  margin-bottom: 18px;
+  font-size: 22px;
+  font-weight: 800;
 }
 
 .form-group {
@@ -44,12 +42,12 @@
   width: 100%;
   padding: 14px 12px;
   font-size: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
   background: none;
   color: #111;
   outline: none;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-group textarea {
@@ -78,7 +76,7 @@
   top: -8px;
   left: 10px;
   font-size: 13px;
-  color: #6200ea;
+  color: #4f46e5;
 }
 
 .error {
@@ -99,21 +97,17 @@
 .b1 {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #7b1fa2, #512da8);
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
   color: #fff;
   border: none;
   border-radius: 10px;
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
-  transition: 0.3s ease all;
+  transition: 0.25s ease all;
 }
 
-.b1:hover {
-  background: linear-gradient(135deg, #512da8, #311b92);
-  transform: scale(1.02);
-  box-shadow: 0 8px 20px rgba(81, 45, 168, 0.3);
-}
+.b1:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(99,102,241,0.28); }
 
 @keyframes fadeSlideIn {
   0% {

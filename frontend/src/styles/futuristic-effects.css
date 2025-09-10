@@ -1,0 +1,670 @@
+/* Futuristic Animations & Effects */
+
+/* Cyberpunk Neon Glow Effects */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 5px var(--primary-color),
+      0 0 10px var(--primary-color),
+      0 0 15px var(--primary-color),
+      0 0 20px var(--primary-color),
+      inset 0 0 10px rgba(99, 102, 241, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 10px var(--primary-color),
+      0 0 20px var(--primary-color),
+      0 0 30px var(--primary-color),
+      0 0 40px var(--primary-color),
+      0 0 50px var(--primary-color),
+      inset 0 0 20px rgba(99, 102, 241, 0.2);
+  }
+}
+
+@keyframes neonFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 
+      0 0 5px var(--primary-color),
+      0 0 10px var(--primary-color),
+      0 0 15px var(--primary-color),
+      0 0 20px var(--primary-color);
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+@keyframes dataStream {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* Holographic Effects */
+@keyframes hologram {
+  0% {
+    background-position: 0% 0%;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    background-position: 100% 0%;
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    background-position: 100% 100%;
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    background-position: 0% 100%;
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    background-position: 0% 0%;
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes scanLine {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Particle System Animation */
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(90vh) translateX(10px) scale(0.5);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-20px) scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(10vh) translateX(30px) scale(0.8);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(0) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Morphing Shapes */
+@keyframes morphBlob {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+  }
+  75% {
+    border-radius: 60% 40% 60% 30% / 70% 40% 50% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+/* Matrix Digital Rain */
+@keyframes matrixRain {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Energy Wave Effect */
+@keyframes energyWave {
+  0% {
+    transform: translateX(-100%) scaleY(1);
+  }
+  50% {
+    transform: translateX(0%) scaleY(1.5);
+  }
+  100% {
+    transform: translateX(100%) scaleY(1);
+  }
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    transform: translate(-8px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  30% {
+    transform: translate(2px, -8px);
+    filter: hue-rotate(270deg);
+  }
+  40% {
+    transform: translate(-2px, 8px);
+    filter: hue-rotate(360deg);
+  }
+  50% {
+    transform: translate(8px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  60% {
+    transform: translate(-8px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  70% {
+    transform: translate(2px, 8px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(-2px, -8px);
+    filter: hue-rotate(360deg);
+  }
+  90% {
+    transform: translate(8px, -2px);
+    filter: hue-rotate(90deg);
+  }
+  100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* Cyber Grid Animation */
+@keyframes cyberGrid {
+  0% {
+    background-position: 0 0, 0 0;
+    opacity: 0.3;
+  }
+  50% {
+    background-position: 20px 20px, 40px 40px;
+    opacity: 0.8;
+  }
+  100% {
+    background-position: 40px 40px, 80px 80px;
+    opacity: 0.3;
+  }
+}
+
+/* Quantum Tunnel Effect */
+@keyframes quantumTunnel {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) translateZ(0);
+    opacity: 1;
+  }
+  50% {
+    transform: perspective(1000px) rotateX(180deg) translateZ(-200px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: perspective(1000px) rotateX(360deg) translateZ(0);
+    opacity: 1;
+  }
+}
+
+/* Neural Network Animation */
+@keyframes neuralPulse {
+  0% {
+    stroke-dasharray: 0 100;
+    stroke: var(--primary-color);
+  }
+  50% {
+    stroke-dasharray: 50 100;
+    stroke: var(--accent-color);
+  }
+  100% {
+    stroke-dasharray: 100 100;
+    stroke: var(--primary-color);
+  }
+}
+
+/* Futuristic Button Hover */
+@keyframes futuristicHover {
+  0% {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    transform: scale(1) perspective(1000px) rotateX(0deg);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    background: linear-gradient(45deg, var(--accent-color), var(--info-color));
+    transform: scale(1.05) perspective(1000px) rotateX(5deg);
+    box-shadow: 
+      0 10px 30px rgba(99, 102, 241, 0.5),
+      0 0 20px var(--primary-color);
+  }
+  100% {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    transform: scale(1.02) perspective(1000px) rotateX(0deg);
+    box-shadow: 
+      0 8px 25px rgba(99, 102, 241, 0.4),
+      0 0 15px var(--primary-color);
+  }
+}
+
+/* Liquid Metal Effect */
+@keyframes liquidMetal {
+  0% {
+    background: linear-gradient(45deg, #c0c0c0, #e8e8e8, #ffffff, #c0c0c0);
+    background-size: 300% 300%;
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Warp Speed Effect */
+@keyframes warpSpeed {
+  0% {
+    transform: translateZ(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateZ(-1000px) scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateZ(-2000px) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Futuristic Classes */
+.futuristic-neon {
+  animation: neonPulse 2s ease-in-out infinite alternate;
+  border: 2px solid var(--primary-color);
+}
+
+.futuristic-flicker {
+  animation: neonFlicker 3s linear infinite;
+}
+
+.futuristic-hologram {
+  background: linear-gradient(45deg, 
+    rgba(99, 102, 241, 0.1),
+    rgba(139, 92, 246, 0.1),
+    rgba(6, 182, 212, 0.1),
+    rgba(16, 185, 129, 0.1));
+  background-size: 400% 400%;
+  animation: hologram 4s ease-in-out infinite;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.futuristic-scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-scanline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  animation: scanLine 2s linear infinite;
+}
+
+.futuristic-particles {
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-particles::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  animation: particleFloat 3s linear infinite;
+  box-shadow: 
+    20px 0 0 var(--accent-color),
+    40px 0 0 var(--info-color),
+    60px 0 0 var(--success-color);
+}
+
+.futuristic-morphing {
+  animation: morphBlob 6s ease-in-out infinite;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+}
+
+.futuristic-glitch {
+  position: relative;
+}
+
+.futuristic-glitch:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+.futuristic-glitch::before,
+.futuristic-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.futuristic-glitch::before {
+  color: #ff0000;
+  animation: glitch 0.3s ease-in-out infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.futuristic-glitch::after {
+  color: #00ffff;
+  animation: glitch 0.3s ease-in-out infinite reverse;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+.futuristic-cyber-grid {
+  background-image: 
+    linear-gradient(rgba(99, 102, 241, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: cyberGrid 3s ease-in-out infinite;
+}
+
+.futuristic-quantum {
+  animation: quantumTunnel 4s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.futuristic-neural {
+  position: relative;
+}
+
+.futuristic-neural svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.futuristic-neural svg path {
+  fill: none;
+  stroke-width: 2;
+  animation: neuralPulse 2s ease-in-out infinite;
+}
+
+.futuristic-button {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.futuristic-button:hover {
+  animation: futuristicHover 0.6s ease-in-out;
+}
+
+.futuristic-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.futuristic-button:hover::before {
+  left: 100%;
+}
+
+.futuristic-liquid-metal {
+  background: linear-gradient(45deg, #c0c0c0, #e8e8e8, #ffffff, #c0c0c0);
+  background-size: 300% 300%;
+  animation: liquidMetal 3s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.futuristic-warp {
+  animation: warpSpeed 2s ease-in-out infinite;
+  perspective: 1000px;
+}
+
+/* Matrix Digital Rain Effect */
+.matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.matrix-character {
+  position: absolute;
+  color: var(--primary-color);
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  animation: matrixRain 3s linear infinite;
+}
+
+/* Energy Wave Container */
+.energy-wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.energy-wave::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(99, 102, 241, 0.3),
+    transparent);
+  animation: energyWave 2s ease-in-out infinite;
+}
+
+/* Advanced Particle System */
+.particle-system {
+  position: relative;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  animation: particleFloat 4s linear infinite;
+}
+
+.particle:nth-child(2) { animation-delay: 0.5s; left: 20%; }
+.particle:nth-child(3) { animation-delay: 1s; left: 40%; }
+.particle:nth-child(4) { animation-delay: 1.5s; left: 60%; }
+.particle:nth-child(5) { animation-delay: 2s; left: 80%; }
+
+/* Futuristic Loading Spinner */
+.futuristic-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  border-top: 3px solid var(--primary-color);
+  border-right: 3px solid var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: relative;
+}
+
+.futuristic-spinner::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 3px solid transparent;
+  border-top: 3px solid var(--info-color);
+  border-left: 3px solid var(--success-color);
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite reverse;
+}
+
+/* Cyberpunk Card Effect */
+.cyberpunk-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(99, 102, 241, 0.1));
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 2rem;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.cyberpunk-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent,
+    var(--primary-color),
+    var(--accent-color),
+    transparent);
+  animation: energyWave 3s ease-in-out infinite;
+}
+
+.cyberpunk-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Holographic Text Effect */
+.holographic-text {
+  background: linear-gradient(45deg, 
+    #ff0080, #ff8c00, #40e0d0, #ff0080);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hologram 3s ease-in-out infinite;
+  filter: brightness(1.2) contrast(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .futuristic-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  
+  .cyberpunk-card {
+    padding: 1.5rem;
+  }
+  
+  .particle-system .particle {
+    width: 2px;
+    height: 2px;
+  }
+  
+  .futuristic-spinner {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .futuristic-neon,
+  .futuristic-flicker,
+  .futuristic-hologram,
+  .futuristic-scanline,
+  .futuristic-particles,
+  .futuristic-morphing,
+  .futuristic-glitch,
+  .futuristic-cyber-grid,
+  .futuristic-quantum,
+  .futuristic-neural,
+  .futuristic-button,
+  .futuristic-liquid-metal,
+  .futuristic-warp,
+  .matrix-rain,
+  .energy-wave,
+  .particle-system,
+  .futuristic-spinner,
+  .cyberpunk-card,
+  .holographic-text {
+    animation: none !important;
+  }
+  
+  .futuristic-glitch::before,
+  .futuristic-glitch::after {
+    display: none;
+  }
+}

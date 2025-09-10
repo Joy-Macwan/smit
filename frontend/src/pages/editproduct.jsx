@@ -45,38 +45,53 @@ const EditProduct = () => {
     }
   };
 
-  if (loading) return <p>Loading product...</p>;
+  if (loading) return (
+    <>
+      <Sidebar />
+      <div className={`${styles.editProductDashboard} scale-in`}>
+        <div className="skeleton skeleton-text gradient-text">Loading product...</div>
+      </div>
+    </>
+  );
 
   return (
     <>
       <Sidebar />
-      <div className={styles.editProductDashboard}>
-  <h2>Edit Product</h2>
-  <div className={styles.editProductForm}>
-    <input
-      type="text"
-      name="name"
-      value={form.name}
-      onChange={handleChange}
-      placeholder="Product Name"
-    />
-    <input
-      type="number"
-      name="price"
-      value={form.price}
-      onChange={handleChange}
-      placeholder="Price"
-    />
-    <input
-      type="number"
-      name="stock"
-      value={form.stock}
-      onChange={handleChange}
-      placeholder="Stock"
-    />
-    <button onClick={handleSave}>Save</button>
-  </div>
-</div>
+      <div className={`${styles.editProductDashboard} scale-in reveal-up in`}>
+        <h2 className="gradient-text bounce">✏️ Edit Product</h2>
+        <div className={`${styles.editProductForm} reveal-up in stagger-children`}>
+          <input
+            type="text"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            placeholder="Product Name"
+            className="lift magnetic"
+          />
+          <input
+            type="number"
+            name="price"
+            value={form.price}
+            onChange={handleChange}
+            placeholder="Price"
+            className="lift magnetic"
+          />
+          <input
+            type="number"
+            name="stock"
+            value={form.stock}
+            onChange={handleChange}
+            placeholder="Stock"
+            className="lift magnetic"
+          />
+          <button className="btn cta lift ripple magnetic glow-pulse bounce" onClick={handleSave}>💾 Save Changes</button>
+        </div>
+
+        {/* Add floating action button */}
+        <button className="fab bounce magnetic glow-pulse" onClick={() => window.location.href='/productlist'}>
+          🔙
+        </button>
+      </div>
     </>
   );
 };

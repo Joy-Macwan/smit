@@ -68,21 +68,33 @@ const Home = () => {
   return (
     <>
       <Sidebar />
-      <div className="home-container">
-        <h2 className="dashboard-title">Retail Billing Dashboard</h2>
+      <div className="home-container scale-in">
+        <h2 className="dashboard-title reveal-fade in gradient-text">Overview</h2>
 
-        <div className="dashboard-cards">
-          {cardData.map((card, index) => (
-            <div className="dashboard-card" key={index}>
-              <h3>{card.title}</h3>
-              <p>{card.value}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="dashboard-section">
-          <h3>Recent Transactions</h3>
-          <table className="transaction-table">
+        <div className="dashboard-cards stagger-children">
+          {dashboardStats.totalSales === 0 ? (
+            // Skeleton loading state
+            Array.from({length: 4}).map((_, index) => (
+              <div className="dashboard-card skeleton" key={index}>
+                <div className="skeleton-text"></div>
+                <div className="skeleton-rect"></div>
+              </div>
+            ))
+          ) : (
+            cardData.map((card, index) => (
+              <div className="dashboard-card stats-card lift accent-border reveal-up in tilt magnetic glow-pulse" key={index}>
+                <div className="stats-card-header">
+                  <div className="stats-card-title">{card.title}</div>
+                </div>
+                <div className="stats-card-value gradient-text">{card.value}</div>
+                <div className="stats-card-change positive reveal-up in">Updated just now</div>
+              </div>
+            ))
+          )}
+        </div>          <div className="dashboard-section card lift reveal-up in magnetic">
+          <h3 className="gradient-text">Recent Transactions</h3>
+          <div className="progress-animated" style={{marginBottom: '1rem'}}></div>
+          <table className="table">
             <thead>
               <tr>
                 <th>Invoice #</th>
@@ -95,33 +107,43 @@ const Home = () => {
             <tbody>
               {recentTransactions.length > 0 ? (
                 recentTransactions.map((txn, index) => (
-                  <tr key={index}>
-                    <td>{txn.id}</td>
+                  <tr key={index} className="lift" style={{transitionDelay: `${index * 100}ms`}}>
+                    <td className="gradient-text">{txn.id}</td>
                     <td>{txn.customer}</td>
                     <td>₹{txn.amount.toLocaleString()}</td>
-                    <td>{txn.payment}</td>
+                    <td><span className="badge badge-primary">{txn.payment}</span></td>
                     <td>{txn.date}</td>
                   </tr>
                 ))
               ) : (
-                <tr><td colSpan="5">Loading...</td></tr>
+                <tr><td colSpan="5"><div className="skeleton-text"></div></td></tr>
               )}
             </tbody>
           </table>
         </div>
 
-        <div className="dashboard-section top-products">
-          <h3>Top Selling Products</h3>
-          <ul>
-            {topProducts.map((product, index) => (
-              <li key={index}>{product.name} - {product.sold} sold</li>
-            ))}
+        <div className="dashboard-section top-products card headered lift reveal-up in tilt">
+          <h3 className="gradient-text">Top Selling Products</h3>
+          <ul className="stagger-children">
+            {topProducts.length > 0 ? (
+              topProducts.map((product, index) => (
+                <li key={index} className="magnetic bounce">{product.name} - <span className="gradient-text">{product.sold}</span> sold</li>
+              ))
+            ) : (
+              Array.from({length: 3}).map((_, index) => (
+                <li key={index}><div className="skeleton-text"></div></li>
+              ))
+            )}
           </ul>
         </div>
 
-        <div className="dashboard-row">
-          <div className="dashboard-section sales-overview">
-            <h3>Sales Overview</h3>
+        {/* Add floating action button */}
+        <button className="fab bounce" onClick={() => window.location.href='/addproduct'}>
+          +
+        </button>        <div className="dashboard-row stagger-children">
+          <div className="dashboard-section sales-overview card lift reveal-up in tilt">
+            <h3 className="gradient-text">Sales Overview</h3>
+            <div className="progress-animated" style={{marginBottom: '1rem'}}></div>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={barData}>
                 <XAxis dataKey="name" />
@@ -132,8 +154,9 @@ const Home = () => {
             </ResponsiveContainer>
           </div>
 
-          <div className="dashboard-section payment-overview">
-            <h3>Payment Methods Breakdown</h3>
+          <div className="dashboard-section payment-overview card lift reveal-up in tilt glow-pulse">
+            <h3 className="gradient-text">Payment Methods Breakdown</h3>
+            <div className="progress-animated" style={{marginBottom: '1rem'}}></div>
             <ResponsiveContainer width="100%" height={300}>
               <PieChart>
                 <Pie

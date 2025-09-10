@@ -18,8 +18,8 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="for1">
-    <div className="Forgotpassword">
+  <div className="for1">
+  <div className="Forgotpassword scale-in">
       <h2>Forgot Password</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Enter your registered email</label>
@@ -38,7 +38,7 @@ const ForgotPassword = () => {
           </div>
         )}
 
-        <button type="submit">Send Reset Link</button>
+  <button type="submit" className="btn btn-primary cta lift ripple">Send Reset Link</button>
 
         <div className="form-footer">
           Remembered your password? <a href="/login">Login</a>

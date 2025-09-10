@@ -20,10 +20,10 @@ const Invoice = () => {
   const { invoiceNumber, customer, items, date, subtotal, tax, discount, grandTotal, profit } = state;
 
   return (
-    <div className="invoice-page">
+    <div className="invoice-page scale-in">
       <div className="invoice-actions">
-        <button onClick={() => navigate('/billing')}>⬅ Back</button>
-        <button onClick={handlePrint}>🖨 Download PDF</button>
+        <button className="btn btn-ghost lift ripple" onClick={() => navigate('/billing')}>⬅ Back</button>
+        <button className="btn btn-primary cta lift ripple" onClick={handlePrint}>🖨 Download PDF</button>
       </div>
 
       <div className="invoice-container" ref={componentRef}>

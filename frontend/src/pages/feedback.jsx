@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../styles/feedback.css";
+// Using shared motion/marketing styles; page-specific CSS removed
 import Sidebar from '../components/sidebar';
-import Header from '../components/header';
 
 const Feedback = () => {
   useEffect(() => {
@@ -57,14 +56,13 @@ const Feedback = () => {
 
   return (
     <div>
-      <Sidebar />
-      <Header />
-      <div className="feedback-wrapper">
-        <form onSubmit={handleSubmit}>
-          <div className="feedback-container">
-            <h2>Feedback Form</h2>
+  <Sidebar />
+      <div className="section">
+        <form onSubmit={handleSubmit} style={{maxWidth:'480px', margin:'0 auto'}}>
+          <div className="card scale-in">
+            <h2 style={{textAlign:'center'}}>Feedback Form</h2>
 
-            <div className="form-group">
+            <div className="form-group reveal-up in">
               <input
                 type="text"
                 name="userName"
@@ -76,7 +74,7 @@ const Feedback = () => {
               {errors.userName && <span className="error">{errors.userName}</span>}
             </div>
 
-            <div className="form-group">
+            <div className="form-group reveal-up in">
               <input
                 type="email"
                 name="email"
@@ -88,7 +86,7 @@ const Feedback = () => {
               {errors.email && <span className="error">{errors.email}</span>}
             </div>
 
-            <div className="form-group">
+            <div className="form-group reveal-up in">
               <textarea
                 name="feedback"
                 value={formData.feedback}
@@ -102,7 +100,7 @@ const Feedback = () => {
             {successMessage && <div className="success">{successMessage}</div>}
             {errorMessage && <div className="error">{errorMessage}</div>}
 
-            <button type="submit" className="b1">Submit</button>
+            <button type="submit" className="btn btn-lg cta lift" style={{width:'100%'}}>Submit</button>
           </div>
         </form>
       </div>

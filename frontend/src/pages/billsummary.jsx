@@ -15,13 +15,13 @@ const BillSummary = ({ totalItems = 0, totalAmount = 0 }) => {
   };
 
   return (
-    <div className="bill-summary-container">
+    <div className="bill-summary-container scale-in">
       <div className="bill-summary" ref={printRef}>
         <h2>🧾 Bill Summary</h2>
         <p>Total Items: <span>{totalItems}</span></p>
         <p>Total Amount: <span>${totalAmount.toFixed(2)}</span></p>
       </div>
-      <button onClick={handlePrint}>🖨️ Print Bill</button>
+  <button onClick={handlePrint} className="btn btn-primary cta lift ripple">🖨️ Print Bill</button>
     </div>
   );
 };

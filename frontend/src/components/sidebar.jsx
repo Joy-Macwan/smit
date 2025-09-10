@@ -47,6 +47,7 @@ const Sidebar = () => {
             <MdFeedback className="sidebar-icon" />
             Feedback
           </NavLink>
+          {/* Modern UI: no demo link */}
         </nav>
       </aside>
     </>

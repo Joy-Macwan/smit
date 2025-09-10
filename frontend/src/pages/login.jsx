@@ -35,47 +35,49 @@ const handleSubmit = async (e) => {
 
 
   return (
-    <div className="l1">
-    <div className="Login">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          placeholder="example@gmail.com"
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+    <div className="l1 reveal-up in">
+      <div className="Login scale-in lift">
+        <h2 className="gradient-text bounce">🔐 Login</h2>
+        <form onSubmit={handleSubmit} className="stagger-children">
+          <label htmlFor="email" className="gradient-text">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            placeholder="example@gmail.com"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="lift magnetic"
+          />
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          placeholder="Enter password"
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          <label htmlFor="password" className="gradient-text">Password</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            placeholder="Enter password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="lift magnetic"
+          />
 
-        <div className="form-footer">
-          <a href="/forgotpassword">Forgot password?</a>
-        </div> 
+          <div className="form-footer lift">
+            <a href="/forgotpassword" className="gradient-text">Forgot password?</a>
+          </div> 
 
-        {message.text && (
-          <div className={`message ${message.type === 'success' ? 'success' : ''}`}>
-            {message.text}
+          {message.text && (
+            <div className={`message ${message.type === 'success' ? 'success gradient-text glow-pulse' : 'gradient-text'} bounce`}>
+              {message.text}
+            </div>
+          )}
+
+          <button type="submit" className="btn btn-primary cta lift ripple magnetic glow-pulse bounce">🚀 Login</button>
+
+          <div className="form-footer lift">
+            Don't have an account? <a href="/register" className="gradient-text">Register</a>
           </div>
-        )}
-
-        <button type="submit">Login</button>
-
-        <div className="form-footer">
-          Don't have an account? <a href="/register">Register</a>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
     </div>
   );
 };

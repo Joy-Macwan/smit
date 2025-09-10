@@ -41,63 +41,67 @@ const Register = () => {
 
 
   return (
-    <div className="r1">
-    <div className="Register">
-      <h2>Create Account</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="fullname">Full Name</label>
-        <input
-          type="text"
-          id="fullname"
-          value={fullname}
-          onChange={(e) => setFullname(e.target.value)}
-          placeholder="Tom Jerry"
-          required
-        />
+    <div className="r1 reveal-up in">
+      <div className="Register scale-in lift">
+        <h2 className="gradient-text bounce">🎉 Create Account</h2>
+        <form onSubmit={handleSubmit} className="stagger-children">
+          <label htmlFor="fullname" className="gradient-text">Full Name</label>
+          <input
+            type="text"
+            id="fullname"
+            value={fullname}
+            onChange={(e) => setFullname(e.target.value)}
+            placeholder="Tom Jerry"
+            required
+            className="lift magnetic"
+          />
 
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="tomjerry@gmail.com"
-          required
-        />
+          <label htmlFor="email" className="gradient-text">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="tomjerry@gmail.com"
+            required
+            className="lift magnetic"
+          />
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter password"
-          required
-        />
+          <label htmlFor="password" className="gradient-text">Password</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter password"
+            required
+            className="lift magnetic"
+          />
 
-        <label htmlFor="confirm">Confirm Password</label>
-        <input
-          type="password"
-          id="confirm"
-          value={confirm}
-          onChange={(e) => setConfirm(e.target.value)}
-          placeholder="Re-enter password"
-          required
-        />
+          <label htmlFor="confirm" className="gradient-text">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm"
+            value={confirm}
+            onChange={(e) => setConfirm(e.target.value)}
+            placeholder="Re-enter password"
+            required
+            className="lift magnetic"
+          />
 
-        {message.text && (
-          <div className={`message ${message.type === 'success' ? 'success' : ''}`}>
-            {message.text}
+          {message.text && (
+            <div className={`message ${message.type === 'success' ? 'success gradient-text glow-pulse' : 'gradient-text'} bounce`}>
+              {message.text}
+            </div>
+          )}
+
+          <div className="login-link lift">
+            Already have an account? <a href="/login" className="gradient-text">Login</a>
           </div>
-        )}
 
-        <div className="login-link">
-          Already have an account? <a href="/login">Login</a>
-        </div>
-
-        <button type="submit">Register</button>
-      </form>
-    </div>
+          <button type="submit" className="btn btn-primary cta lift ripple magnetic glow-pulse bounce">✨ Register</button>
+        </form>
+      </div>
     </div>
   );
 };

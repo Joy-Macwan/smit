@@ -51,51 +51,56 @@ const AddProduct = () => {
   return (
     <>
       <Sidebar />
-      <div className="a1">
-        <div className="add-product-container">
-          <form onSubmit={handleSubmit} className="add-product-form">
-            <h2>Add New Product</h2>
+      <div className="a1 reveal-up in">
+        <div className="add-product-container scale-in lift">
+          <form onSubmit={handleSubmit} className="add-product-form stagger-children">
+            <h2 className="gradient-text bounce">✨ Add New Product</h2>
 
-            <div className="form-row">
-              <div className="input-group half-width">
+            <div className="form-row reveal-up in">
+              <div className="input-group half-width lift magnetic">
                 <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder=" " required />
                 <label>Product Name</label>
               </div>
-              <div className="input-group half-width">
+              <div className="input-group half-width lift magnetic">
                 <textarea name="description" value={formData.description} onChange={handleChange} placeholder=" " required />
                 <label>Description</label>
               </div>
             </div>
 
-            <div className="form-row">
-              <div className="input-group quarter-width">
+            <div className="form-row reveal-up in stagger-children">
+              <div className="input-group quarter-width lift magnetic">
                 <input type="number" name="price" value={formData.price} onChange={handleChange} placeholder=" " required />
                 <label>Price (₹)</label>
               </div>
-              <div className="input-group quarter-width">
+              <div className="input-group quarter-width lift magnetic">
                 <input type="number" name="stock" value={formData.stock} onChange={handleChange} placeholder=" " required />
                 <label>Stock Quantity</label>
               </div>
-              <div className="input-group quarter-width">
+              <div className="input-group quarter-width lift magnetic">
                 <input type="text" name="brand" value={formData.brand} onChange={handleChange} placeholder=" " required />
                 <label>Brand</label>
               </div>
-              <div className="input-group quarter-width">
+              <div className="input-group quarter-width lift magnetic">
                 <input type="text" name="category" value={formData.category} onChange={handleChange} placeholder=" " required />
                 <label>Category</label>
               </div>
             </div>
 
-            <div className="form-row">
-              <label className="image-label">Product Image</label>
-              <input type="file" onChange={handleImageChange} required />
+            <div className="form-row reveal-up in">
+              <label className="image-label gradient-text">Product Image</label>
+              <input type="file" onChange={handleImageChange} required className="lift magnetic" />
             </div>
 
             <div className="form-row">
-              <button type="submit">Add Product</button>
+              <button type="submit" className="btn cta lift ripple magnetic glow-pulse bounce">✨ Add Product</button>
             </div>
           </form>
         </div>
+
+        {/* Add floating action button */}
+        <button className="fab bounce magnetic glow-pulse" onClick={() => window.location.href='/productlist'}>
+          📋
+        </button>
       </div>
     </>
   );

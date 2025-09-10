@@ -1,0 +1,50 @@
+/* Modern Motion System: tasteful, high-converting animations */
+
+:root {
+  --motion-fast: 160ms;
+  --motion-normal: 260ms;
+  --motion-slow: 420ms;
+  --easing-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --easing-emphasized: cubic-bezier(0.2, 0.8, 0, 1);
+}
+
+/* Reveal on scroll (use with IntersectionObserver or on mount) */
+.reveal-up { opacity: 0; transform: translateY(16px); }
+.reveal-up.in { opacity: 1; transform: translateY(0); transition: opacity var(--motion-normal) var(--easing-standard), transform var(--motion-normal) var(--easing-standard); }
+
+.reveal-fade { opacity: 0; }
+.reveal-fade.in { opacity: 1; transition: opacity var(--motion-normal) var(--easing-standard); }
+
+/* Hover/lift patterns */
+.lift { transition: transform var(--motion-normal) var(--easing-standard), box-shadow var(--motion-normal) var(--easing-standard); }
+.lift:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,0.12); }
+
+/* Shimmer highlight (for buttons/CTAs) */
+.cta { position: relative; overflow: hidden; }
+.cta::after { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.18) 20%, transparent 40%); transform: translateX(-120%); }
+.cta:hover::after { transform: translateX(120%); transition: transform 900ms var(--easing-emphasized); }
+
+/* Subtle pulse to draw attention */
+.pulse-soft { animation: pulseSoft 2.4s ease-in-out infinite; }
+@keyframes pulseSoft { 0%,100%{ transform: scale(1); } 50%{ transform: scale(1.02); } }
+
+/* Scale-in entrance */
+.scale-in { animation: scaleIn var(--motion-normal) var(--easing-standard) both; }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+
+/* Slide-in from edges */
+.slide-in-left { animation: slideInLeft var(--motion-normal) var(--easing-standard) both; }
+.slide-in-right { animation: slideInRight var(--motion-normal) var(--easing-standard) both; }
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: translateX(0); } }
+
+/* Card hover accent border */
+.accent-border { position: relative; }
+.accent-border::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, rgba(99,102,241,0.45), rgba(139,92,246,0.45)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity var(--motion-fast) var(--easing-standard); }
+.accent-border:hover::before { opacity: 1; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pulse-soft, .scale-in, .slide-in-left, .slide-in-right { animation: none !important; }
+  .lift, .cta, .accent-border { transition: none !important; }
+}

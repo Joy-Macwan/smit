@@ -53,16 +53,17 @@ const ProductList = () => {
   return (
     <>
       <Sidebar />
-      <div className={styles.posDashboard}>
-        <h2>🛒 Product Selection</h2>
+      <div className={`${styles.posDashboard} scale-in`}>
+        <h2 className="gradient-text bounce">🛒 Product Selection</h2>
 
         {/* Search + Filters */}
-        <div className={styles.posFilters}>
+        <div className={`${styles.posFilters} reveal-up in stagger-children`}>
           <input
             type="text"
             placeholder="Search product..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+            className="magnetic"
           />
 
           <div className={styles.filterButtons}>
@@ -70,7 +71,7 @@ const ProductList = () => {
               <button
                 key={cat}
                 onClick={() => setFilteredCategory(cat)}
-                className={filteredCategory === cat ? styles.active : ""}
+                className={`${filteredCategory === cat ? styles.active : ""} btn-ghost magnetic ripple`}
               >
                 {cat}
               </button>
@@ -78,42 +79,53 @@ const ProductList = () => {
           </div>
         </div>
 
-        {loading && <p>Loading products...</p>}
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {loading && (
+          <div className="stagger-children">
+            {Array.from({length: 8}).map((_, index) => (
+              <div key={index} className="skeleton" style={{height: '200px', margin: '1rem'}}></div>
+            ))}
+          </div>
+        )}
+        {error && <p className="gradient-text" style={{ color: "red" }}>{error}</p>}
 
         {/* Product Grid */}
-        <div className={styles.posProductGrid}>
+        <div className={`${styles.posProductGrid} reveal-up in stagger-children`}>
           {!loading && !error && filteredProducts.length > 0 ? (
-            filteredProducts.map((product) => (
-              <div className={styles.posProductCard} key={product._id}>
-                <img src={product.imageUrl} alt={product.name} />
+            filteredProducts.map((product, index) => (
+              <div className={`${styles.posProductCard} lift tilt magnetic glow-pulse`} key={product._id} style={{animationDelay: `${index * 50}ms`}}>
+                <img src={product.imageUrl} alt={product.name} className="magnetic" />
                 <div className={styles.posProductInfo}>
-                  <h3>{product.name}</h3>
-                  <p className={styles.posPrice}>₹{product.price}</p>
+                  <h3 className="gradient-text">{product.name}</h3>
+                  <p className={`${styles.posPrice} gradient-text bounce`}>₹{product.price}</p>
                   <p
                     className={
                       product.stock > 0
-                        ? `${styles.posStock} ${styles.inStock}`
-                        : `${styles.posStock} ${styles.outStock}`
+                        ? `${styles.posStock} ${styles.inStock} badge badge-success`
+                        : `${styles.posStock} ${styles.outStock} badge badge-danger`
                     }
                   >
                     {product.stock > 0 ? `Stock: ${product.stock}` : "Out of Stock"}
                   </p>
 
                   {/* ✅ Edit link + Delete button */}
-                  <div className={styles.actionButtons}>
+                  <div className={`${styles.actionButtons} stagger-children`}>
                     <Link to={`/editproduct/${product._id}`}>
-                      <button className={styles.editButton}>✏️ Edit</button>
+                      <button className={`btn btn-ghost lift ripple magnetic`}>✏️ Edit</button>
                     </Link>
-                    <button className={styles.deleteButton} onClick={() => handleDelete(product._id)}>🗑️ Delete</button>
+                    <button className={`btn btn-secondary lift ripple magnetic`} onClick={() => handleDelete(product._id)}>🗑️ Delete</button>
                   </div>
                 </div>
               </div>
             ))
           ) : (
-            !loading && !error && <p>No products found.</p>
+            !loading && !error && <p className="gradient-text">No products found.</p>
           )}
         </div>
+
+        {/* Add floating action button */}
+        <button className="fab bounce magnetic" onClick={() => window.location.href='/addproduct'}>
+          +
+        </button>
       </div>
     </>
   );

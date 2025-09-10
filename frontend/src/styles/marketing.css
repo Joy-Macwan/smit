@@ -1,0 +1,51 @@
+/* Modern Marketing Styles: clean, bold, high-converting */
+
+.hero {
+  background: linear-gradient(135deg, #0f172a 0%, #111827 60%, #1f2937 100%);
+  color: #fff;
+  padding: 4rem 1.5rem;
+  border-radius: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero h1 { font-weight: 800; letter-spacing: -0.02em; font-size: clamp(2rem, 6vw, 3.25rem); }
+.hero p { color: rgba(255,255,255,0.8); font-size: clamp(1rem, 2.4vw, 1.25rem); margin-top: 0.75rem; }
+.hero .actions { margin-top: 1.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.hero .btn-primary { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; border: none; padding: 0.9rem 1.2rem; border-radius: 0.75rem; font-weight: 700; cursor: pointer; box-shadow: 0 10px 25px rgba(99,102,241,0.25); }
+.hero .btn-secondary { background: #0b1220; color: #e5e7eb; border: 1px solid rgba(255,255,255,0.12); padding: 0.9rem 1.2rem; border-radius: 0.75rem; font-weight: 700; cursor: pointer; }
+
+/* Metric Cards */
+.metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.metric { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 1rem; padding: 1.25rem; box-shadow: 0 10px 20px rgba(17,24,39,0.06); }
+.metric h4 { font-size: 0.85rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.4rem; }
+.metric .value { font-size: 2rem; font-weight: 800; color: #111827; }
+.metric .delta { font-size: 0.9rem; font-weight: 600; margin-top: 0.25rem; }
+.metric .delta.pos { color: #059669; }
+.metric .delta.neg { color: #dc2626; }
+
+/* Cards */
+.card { background: #fff; border: 1px solid #e5e7eb; border-radius: 1rem; padding: 1.25rem; box-shadow: 0 8px 20px rgba(17,24,39,0.06); }
+.card.headered h3 { margin: 0 0 0.75rem; font-size: 1rem; color: #111827; }
+.card .muted { color: #6b7280; }
+
+/* Table */
+.table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; }
+.table thead { background: #f3f4f6; }
+.table th, .table td { padding: 0.9rem 1rem; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; }
+.table tbody tr:hover { background: #f9fafb; }
+
+/* Badges */
+.badge { display: inline-block; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; }
+.badge.primary { background: rgba(99,102,241,0.12); color: #4f46e5; }
+.badge.success { background: rgba(16,185,129,0.12); color: #10b981; }
+.badge.warning { background: rgba(245,158,11,0.12); color: #f59e0b; }
+.badge.danger { background: rgba(239,68,68,0.12); color: #ef4444; }
+
+/* CTA Panel */
+.cta-panel { background: linear-gradient(135deg, #ffffff, #f8fafc); border: 1px solid #e5e7eb; padding: 1.25rem; border-radius: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.cta-panel .title { font-weight: 800; font-size: 1.25rem; color: #111827; }
+.cta-panel .desc { color: #6b7280; }
+.cta-panel .btn { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; border: none; padding: 0.75rem 1.1rem; border-radius: 0.75rem; font-weight: 700; cursor: pointer; }
+
+/* Utility spacing */
+.section { margin-top: 2rem; }
