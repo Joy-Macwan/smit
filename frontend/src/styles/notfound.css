@@ -1,0 +1,43 @@
+.n1 {
+  min-height: 100vh;
+  background-color: #1e1e2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found {
+  text-align: center;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+}
+
+.not-found h2 {
+  font-size: 32px;
+  color: #ff5252;
+  margin-bottom: 20px;
+}
+
+.not-found p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.not-found a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0097a7;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.not-found a:hover {
+    background-color: #00bcd4;
+}

@@ -1,0 +1,142 @@
+.feedback-wrapper {
+  padding: 40px 20px;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f0f4ff, #dbe7ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.feedback-container {
+  background: #fff;
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: fadeSlideIn 0.4s ease-out;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-top: -170px;
+}
+
+.feedback-container::-webkit-scrollbar {
+  display: none;
+}
+
+.feedback-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: none;
+  color: #111;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group label {
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  font-size: 15px;
+  color: #aaa;
+  background: #fff;
+  padding: 0 5px;
+  pointer-events: none;
+  transition: 0.25s ease all;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input.filled + label,
+.form-group textarea.filled + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 10px;
+  font-size: 13px;
+  color: #6200ea;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 13px;
+  margin-top: 6px;
+  display: block;
+}
+
+.success {
+  color: #2e7d32;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.b1 {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #7b1fa2, #512da8);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.b1:hover {
+  background: linear-gradient(135deg, #512da8, #311b92);
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(81, 45, 168, 0.3);
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .feedback-wrapper {
+    margin-left: 0;
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .feedback-container {
+    padding: 30px 25px;
+    width: 100%;
+    max-height: 90vh;
+  }
+}

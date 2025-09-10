@@ -1,0 +1,46 @@
+.bill-summary-container {
+  margin-left: 220px;
+  padding: 2rem;
+  margin-left: 500px;
+  margin-top: 50px;
+  max-width: 450px;
+  background-color: #1e1e2f;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+}
+
+.bill-summary h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #00bcd4;
+}
+
+.bill-summary p {
+  font-size: 18px;
+  margin: 12px 0;
+}
+
+.bill-summary span {
+  font-weight: bold;
+  color: #ffa726;
+}
+
+.bill-summary-container button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0097a7;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.bill-summary-container button:hover {
+  background-color: #00bcd4;
+  transform: scale(1.03);
+}

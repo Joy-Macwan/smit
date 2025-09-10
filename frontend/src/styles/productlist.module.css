@@ -1,0 +1,235 @@
+.posDashboard {
+  padding: 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+  margin-left: 220px;
+}
+
+.posDashboard h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.posFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.posFilters input {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.filterButtons {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.filterButtons button {
+  padding: 6px 12px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+  width: 10%;
+}
+
+.filterButtons button:hover {
+  background: #bbb;
+}
+
+.active {
+  background: #007bff !important;
+  color: #fff;
+}
+
+.posProductGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+}
+
+.posProductCard {
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.posProductCard img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.posProductInfo {
+  margin-top: 8px;
+}
+
+.posProductInfo h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.posPrice {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 14px;
+}
+
+.posStock {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.inStock {
+  color: green;
+}
+
+.outStock {
+  color: red;
+}
+
+/* ✅ Edit/Delete Buttons */
+.actionButtons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.actionButtons button {
+  padding: 5px 10px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+/* .actionButtons button:first-child {
+  background-color: #28a745;
+  color: white;
+}
+
+.actionButtons button:last-child {
+  background-color: #dc3545;
+  color: white;
+} */
+/* ================= Edit Button Style ================= */
+.editButton {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editButton:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+.deleteButton {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editButton:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+.actionButtons button:hover {
+  opacity: 0.85;
+}
+
+/* ✅ Inline edit form inside product card */
+.posProductInfo input {
+  width: 100%;
+  padding: 6px 8px;
+  margin: 4px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.posProductInfo button {
+  margin-top: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  transition: background 0.2s;
+}
+
+.posProductInfo button:hover {
+  background: #0056b3;
+}
+
+@media (max-width: 992px) {
+  .categoryColumn {
+    flex: 1 1 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .filterButtons button {
+    width: 30%;
+  }
+
+  .searchBox {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .posDashboard {
+    margin-left: 0;
+    padding: 20px 15px;
+  }
+
+  .filterButtons button {
+    width: 30%;
+  }
+
+  .topSection {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .categoryColumn {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .catButton {
+    width: auto;
+    min-width: 100px;
+  }
+}

@@ -1,0 +1,81 @@
+.invoice-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 40px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+
+.invoice-header p {
+  margin: 5px 0;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.invoice-table th,
+.invoice-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.invoice-table th {
+  background-color: #f37021;
+  color: white;
+}
+
+.invoice-summary {
+  margin-top: 20px;
+  text-align: right;
+}
+.invoice-page {
+  padding: 20px;
+}
+
+.invoice-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.invoice-actions button {
+  background-color: #f37021;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.invoice-actions button:hover {
+  background-color: #d85e1b;
+}
+.invoice-footer {
+  margin-top: 60px;
+  text-align: right;
+  font-style: italic;
+  color: #555;
+}
+
+.invoice-signature {
+  margin-top: 60px;
+  text-align: right;
+}
+
+.invoice-signature p {
+  margin: 4px 0;
+}
+
+.invoice-signature .line {
+  width: 200px;
+  border-top: 1px solid #000;
+  margin-bottom: 4px;
+}

@@ -1,0 +1,119 @@
+/* ===================== Dashboard Wrapper ===================== */
+.editProductDashboard {
+  padding: 20px;
+  min-height: 100vh;
+  background: #f4f7fa;
+  margin-left: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.editProductDashboard h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.editProductDashboard h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #007bff;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* ===================== Form Card ===================== */
+.editProductForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===================== Input Fields ===================== */
+.editProductForm input {
+  padding: 12px 15px;
+  font-size: 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.editProductForm input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* ===================== Save Button ===================== */
+.editProductForm button {
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #007bff, #00bfff);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editProductForm button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.35);
+  background: linear-gradient(45deg, #0056b3, #0099ff);
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 1024px) {
+  .editProductDashboard {
+    margin-left: 180px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .editProductDashboard {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .editProductForm {
+    padding: 25px 20px;
+    max-width: 100%;
+  }
+
+  .editProductForm button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .editProductForm {
+    padding: 20px 15px;
+    gap: 12px;
+  }
+
+  .editProductForm input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .editProductForm button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}

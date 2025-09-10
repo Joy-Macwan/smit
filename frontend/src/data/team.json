@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Aarav Mehta",
+    "role": "Founder & CEO",
+    "avatar": "/team/aarav.jpg"
+  },
+  {
+    "name": "Sneha Patel",
+    "role": "UI/UX Designer",
+    "avatar": "/team/sneha.jpg"
+  },
+  {
+    "name": "Raj Verma",
+    "role": "Full Stack Developer",
+    "avatar": "/team/raj.jpg"
+  }
+]
