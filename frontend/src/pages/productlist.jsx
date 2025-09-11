@@ -54,24 +54,27 @@ const ProductList = () => {
     <>
       <Sidebar />
       <div className={`${styles.posDashboard} scale-in`}>
-        <h2 className="gradient-text bounce">🛒 Product Selection</h2>
+        <h2 className="gradient-text animate-pulse">🛒 Product Selection</h2>
 
         {/* Search + Filters */}
-        <div className={`${styles.posFilters} reveal-up in stagger-children`}>
-          <input
-            type="text"
-            placeholder="Search product..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="magnetic"
-          />
+        <div className="reveal-up in">
+          <div className="search-input mb-4">
+            <input
+              type="text"
+              placeholder="Search product..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="form-control magnetic focus-in"
+            />
+            <span className="search-icon">🔍</span>
+          </div>
 
-          <div className={styles.filterButtons}>
+          <div className={`${styles.filterButtons} stagger-children`}>
             {["All", "Glossary", "Biscuit", "Drinks", "Chocolates", "Ice-Cream","Chips & Maggi"].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilteredCategory(cat)}
-                className={`${filteredCategory === cat ? styles.active : ""} btn-ghost magnetic ripple`}
+                className={`${filteredCategory === cat ? "btn-primary" : "btn-ghost"} ripple btn btn-md hover-glow`}
               >
                 {cat}
               </button>
@@ -80,39 +83,52 @@ const ProductList = () => {
         </div>
 
         {loading && (
-          <div className="stagger-children">
+          <div className="card-grid stagger-children">
             {Array.from({length: 8}).map((_, index) => (
               <div key={index} className="skeleton" style={{height: '200px', margin: '1rem'}}></div>
             ))}
           </div>
         )}
-        {error && <p className="gradient-text" style={{ color: "red" }}>{error}</p>}
+        {error && <p className="text-danger gradient-text">{error}</p>}
 
         {/* Product Grid */}
-        <div className={`${styles.posProductGrid} reveal-up in stagger-children`}>
+        <div className="card-grid reveal-up in">
           {!loading && !error && filteredProducts.length > 0 ? (
             filteredProducts.map((product, index) => (
-              <div className={`${styles.posProductCard} lift tilt magnetic glow-pulse`} key={product._id} style={{animationDelay: `${index * 50}ms`}}>
-                <img src={product.imageUrl} alt={product.name} className="magnetic" />
-                <div className={styles.posProductInfo}>
-                  <h3 className="gradient-text">{product.name}</h3>
-                  <p className={`${styles.posPrice} gradient-text bounce`}>₹{product.price}</p>
-                  <p
+              <div 
+                className="product-card card-3d lift glow-on-hover" 
+                key={product._id} 
+                style={{animationDelay: `${index * 50}ms`}}
+              >
+                <img 
+                  src={product.imageUrl} 
+                  alt={product.name} 
+                  className="product-image" 
+                />
+                <div className="product-content">
+                  <h3 className="product-name gradient-text">{product.name}</h3>
+                  <p className="product-price animate-pulse">₹{product.price}</p>
+                  <div
                     className={
                       product.stock > 0
-                        ? `${styles.posStock} ${styles.inStock} badge badge-success`
-                        : `${styles.posStock} ${styles.outStock} badge badge-danger`
+                        ? "badge badge-success"
+                        : "badge badge-danger"
                     }
                   >
                     {product.stock > 0 ? `Stock: ${product.stock}` : "Out of Stock"}
-                  </p>
+                  </div>
 
                   {/* ✅ Edit link + Delete button */}
-                  <div className={`${styles.actionButtons} stagger-children`}>
+                  <div className="product-actions mt-3">
                     <Link to={`/editproduct/${product._id}`}>
-                      <button className={`btn btn-ghost lift ripple magnetic`}>✏️ Edit</button>
+                      <button className="btn btn-primary ripple">✏️ Edit</button>
                     </Link>
-                    <button className={`btn btn-secondary lift ripple magnetic`} onClick={() => handleDelete(product._id)}>🗑️ Delete</button>
+                    <button 
+                      className="btn btn-danger ripple" 
+                      onClick={() => handleDelete(product._id)}
+                    >
+                      🗑️ Delete
+                    </button>
                   </div>
                 </div>
               </div>
@@ -123,7 +139,7 @@ const ProductList = () => {
         </div>
 
         {/* Add floating action button */}
-        <button className="fab bounce magnetic" onClick={() => window.location.href='/addproduct'}>
+        <button className="fab bounce-on-hover" onClick={() => window.location.href='/addproduct'}>
           +
         </button>
       </div>

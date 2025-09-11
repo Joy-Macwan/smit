@@ -1,0 +1,811 @@
+/* Modern Animation Effects */
+
+/* Button Click Effects */
+@keyframes buttonClick {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  50% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* Ripple Effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Neon Glow Pulse */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--primary-color),
+                0 0 10px var(--primary-color),
+                0 0 15px var(--primary-color);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--primary-color),
+                0 0 25px var(--primary-color),
+                0 0 35px var(--primary-color);
+  }
+}
+
+/* Neon Text Glow */
+@keyframes textNeonPulse {
+  0%, 100% {
+    text-shadow: 0 0 5px var(--primary-color),
+                 0 0 10px var(--primary-color);
+  }
+  50% {
+    text-shadow: 0 0 15px var(--primary-color),
+                 0 0 25px var(--primary-color),
+                 0 0 35px var(--primary-color);
+  }
+}
+
+/* 3D Flip */
+@keyframes flip3D {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  100% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+}
+
+/* Card Hover 3D Effect */
+@keyframes cardHover3D {
+  0% {
+    transform: perspective(500px) rotateX(0) rotateY(0);
+  }
+  100% {
+    transform: perspective(500px) rotateX(5deg) rotateY(5deg);
+  }
+}
+
+/* Slide Up Reveal */
+@keyframes slideReveal {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Gradient Animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating Animation */
+@keyframes floatingAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Border Glow Pulse */
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+  50% {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 15px var(--primary-light);
+  }
+}
+
+/* Button Squeeze */
+@keyframes squeeze {
+  0% {
+    transform: scaleX(1);
+  }
+  30% {
+    transform: scaleX(1.2) scaleY(0.8);
+  }
+  50% {
+    transform: scaleX(0.8) scaleY(1.2);
+  }
+  70% {
+    transform: scaleX(1.1) scaleY(0.9);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+
+/* Shaking Animation */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+/* Rotating Border Animation */
+@keyframes rotateBorder {
+  0% {
+    border-image-source: conic-gradient(var(--primary-color) 0%, transparent 30%);
+  }
+  100% {
+    border-image-source: conic-gradient(var(--primary-color) 360%, transparent 0%);
+  }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Animation Utility Classes */
+.clickable {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clickable:active {
+  animation: buttonClick 0.3s ease;
+}
+
+/* Ripple Effect */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0s;
+}
+
+.ripple:active::after {
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+/* Glowing Effects */
+.glow-on-hover {
+  position: relative;
+  z-index: 1;
+}
+
+.glow-on-hover:hover {
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+.text-glow-on-hover:hover {
+  animation: textNeonPulse 1.5s infinite alternate;
+}
+
+/* 3D Card Effect */
+.card-3d {
+  transition: transform 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animated Border */
+.animated-border {
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: conic-gradient(
+    var(--primary-color) 0%, 
+    var(--secondary-color) 25%, 
+    var(--accent-color) 50%, 
+    var(--info-color) 75%, 
+    var(--primary-color) 100%
+  );
+  border-image-width: 3px;
+  animation: rotateBorder 3s linear infinite;
+}
+
+/* Gradient Background Animation */
+.gradient-animate {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color));
+  background-size: 300% 300%;
+  animation: gradientFlow 3s ease infinite;
+}
+
+/* Floating Element */
+.floating {
+  animation: floatingAnimation 3s ease-in-out infinite;
+}
+
+/* Shimmer Effect */
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Squeeze Animation */
+.squeeze-on-click:active {
+  animation: squeeze 0.5s ease;
+}
+
+/* Shake Animation */
+.shake-on-hover:hover {
+  animation: shake 0.5s;
+}
+
+/* Staggered Animation for Children */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideReveal 0.5s ease forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.7s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.8s; }
+.stagger-children > *:nth-child(9) { animation-delay: 0.9s; }
+.stagger-children > *:nth-child(10) { animation-delay: 1.0s; }
+
+/* Animated Underline */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* Magnetic Effect (pseudo-effect, actual implementation requires JS) */
+.magnetic {
+  transition: transform 0.2s ease;
+}
+
+.magnetic:hover {
+  transform: scale(1.05);
+}
+
+/* Rotating Animation */
+.rotate-infinite {
+  animation: spin 8s linear infinite;
+}
+
+/* Rotating Hover Effect */
+.rotate-on-hover:hover {
+  animation: spin 1s linear;
+}
+
+/* Bounce on Hover */
+.bounce-on-hover:hover {
+  animation: bounce 1s;
+}
+
+/* Neon Border */
+.neon-border {
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color),
+              0 0 10px var(--primary-color);
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+/* Neon Text */
+.neon-text {
+  color: var(--primary-color);
+  text-shadow: 0 0 5px var(--primary-color),
+               0 0 10px var(--primary-color);
+  animation: textNeonPulse 1.5s infinite alternate;
+}
+
+/* Dynamic Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color));
+  background-size: 300% auto;
+  animation: gradientFlow 3s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Fade In Animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Fade In Up Animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Down Animation */
+.fade-in-down {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 0.5s ease forwards;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale In Animation */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Zoom In Animation */
+.zoom-in {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.zoom-in:hover {
+  transform: scale(1.1);
+}
+
+/* Shake Animation */
+.shake {
+  animation: shake 0.5s;
+}
+
+/* Pulse Animation */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Focus Effect */
+.focus-in {
+  transition: all 0.3s ease;
+}
+
+.focus-in:focus, .focus-in:hover {
+  box-shadow: 0 0 0 3px rgba(98, 0, 238, 0.2);
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Reveal Animation */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.reveal-up.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reveal Left Animation */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s ease;
+}
+
+.reveal-left.in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Reveal Right Animation */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.5s ease;
+}
+
+.reveal-right.in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Typing Animation */
+.typing {
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--primary-color);
+  animation: typing 2s steps(20) 1s forwards, blink 1s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary-color) }
+}
+
+/* Responsive Animation Adjustments */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Special Animation for Buttons */
+.btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Background Spotlight Effect */
+.bg-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-spotlight::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+/* Ghost Button */
+.btn-ghost {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-ghost:hover {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 5px 15px rgba(98, 0, 238, 0.3);
+}
+
+/* Floating Action Button */
+.fab {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.fab:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.badge-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.badge-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.badge-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.badge-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.badge-warning {
+  background-color: var(--warning-color);
+  color: var(--text-primary);
+}
+
+/* Shimmer Skeleton Loading */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+/* Tilt Effect (requires JS for full implementation) */
+.tilt {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.tilt:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Glitch Effect */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -1px 0 var(--danger-color);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: 1px 0 var(--info-color);
+  animation: glitch-anim2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(5px, 9999px, 10px, 0);
+  }
+  25% {
+    clip: rect(15px, 9999px, 20px, 0);
+  }
+  50% {
+    clip: rect(25px, 9999px, 30px, 0);
+  }
+  75% {
+    clip: rect(35px, 9999px, 40px, 0);
+  }
+  100% {
+    clip: rect(45px, 9999px, 50px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(10px, 9999px, 15px, 0);
+  }
+  25% {
+    clip: rect(20px, 9999px, 25px, 0);
+  }
+  50% {
+    clip: rect(30px, 9999px, 35px, 0);
+  }
+  75% {
+    clip: rect(40px, 9999px, 45px, 0);
+  }
+  100% {
+    clip: rect(50px, 9999px, 55px, 0);
+  }
+}
+
+/* Lift Effect */
+.lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Growing Border */
+.growing-border {
+  position: relative;
+}
+
+.growing-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.growing-border:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Custom Pulsing Animation */
+.glow-pulse {
+  box-shadow: 0 0 0 rgba(98, 0, 238, 0.4);
+  animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(98, 0, 238, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(98, 0, 238, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(98, 0, 238, 0);
+  }
+}

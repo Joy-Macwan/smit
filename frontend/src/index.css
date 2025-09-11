@@ -1,7 +1,16 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
-/* CSS Variables for consistent theming */
+/* Import our style modules */
+@import './styles/color-palette.css';
+@import './styles/modern-animations.css';
+@import './styles/modern-buttons.css';
+@import './styles/modern-cards.css';
+@import './styles/modern-forms.css';
+@import './styles/modern-tables.css';
+@import './styles/ripple-effect.css';
+
+/* CSS Variables for consistent theming - legacy variables maintained for backward compatibility */
 :root {
   --primary-color: #6366f1;
   --primary-hover: #5855eb;

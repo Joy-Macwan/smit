@@ -1,0 +1,401 @@
+/* Modern Card Styles */
+
+/* Base Card */
+.card {
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Header */
+.card-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-header h3, .card-header h4 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Card Body */
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Card Footer */
+.card-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-tertiary);
+}
+
+/* Card Variations */
+
+/* Elevated Card */
+.card-elevated {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Flat Card */
+.card-flat {
+  box-shadow: none;
+  border: 1px solid var(--border-color);
+}
+
+/* Rounded Card */
+.card-rounded {
+  border-radius: 24px;
+}
+
+/* Bordered Card */
+.card-bordered {
+  border-width: 2px;
+}
+
+/* Gradient Border Card */
+.card-gradient-border {
+  position: relative;
+  border: none;
+}
+
+.card-gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+/* Glass Card */
+.card-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Hover Effects */
+
+/* Hover Lift */
+.card-hover-lift:hover {
+  transform: translateY(-10px);
+}
+
+/* Hover Scale */
+.card-hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* Hover Glow */
+.card-hover-glow:hover {
+  box-shadow: 0 0 20px rgba(98, 0, 238, 0.3);
+}
+
+/* Card with Image */
+.card-with-image {
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.card-with-image:hover .card-image {
+  transform: scale(1.05);
+}
+
+/* Card with Image Overlay */
+.card-image-overlay {
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.card-image-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-image-overlay .card-overlay-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Product Card */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid var(--border-color);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.product-card .product-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-card .product-content {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card .product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.product-card .product-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+}
+
+.product-card .product-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.product-card .product-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Profile Card */
+.profile-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.profile-card .profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem auto;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 10px rgba(98, 0, 238, 0.3);
+}
+
+.profile-card .profile-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.profile-card .profile-title {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.profile-card .profile-bio {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-card .profile-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Stat Card */
+.stat-card {
+  padding: 1.5rem;
+}
+
+.stat-card .stat-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.stat-card .stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stat-card .stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-grid-compact {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.card-grid-wide {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Card List */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Horizontal Card */
+.card-horizontal {
+  display: flex;
+  overflow: hidden;
+}
+
+.card-horizontal .card-image {
+  width: 35%;
+  min-width: 150px;
+  object-fit: cover;
+}
+
+.card-horizontal .card-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Card with Badge */
+.card-with-badge {
+  position: relative;
+}
+
+.card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  color: white;
+  z-index: 1;
+}
+
+.card-badge-top-left {
+  top: 1rem;
+  left: 1rem;
+  right: auto;
+}
+
+.card-badge-bottom-right {
+  top: auto;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.card-badge-bottom-left {
+  top: auto;
+  bottom: 1rem;
+  left: 1rem;
+  right: auto;
+}
+
+/* Cards for Different Purposes */
+
+/* Info Card */
+.info-card {
+  padding: 1.5rem;
+  background-color: rgba(33, 150, 243, 0.1);
+  border-left: 4px solid var(--info-color);
+}
+
+/* Warning Card */
+.warning-card {
+  padding: 1.5rem;
+  background-color: rgba(255, 152, 0, 0.1);
+  border-left: 4px solid var(--warning-color);
+}
+
+/* Success Card */
+.success-card {
+  padding: 1.5rem;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-left: 4px solid var(--success-color);
+}
+
+/* Error Card */
+.error-card {
+  padding: 1.5rem;
+  background-color: rgba(244, 67, 54, 0.1);
+  border-left: 4px solid var(--danger-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card-horizontal {
+    flex-direction: column;
+  }
+  
+  .card-horizontal .card-image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
